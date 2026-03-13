@@ -1,0 +1,32 @@
+[project]
+name = "alisa-sdk"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "alisa-config",
+    "alisa-env",
+    "alisa-data",
+    "alisa-storage",
+    "alisa-log",
+    "alisa-time"
+]
+
+[tool.uv.workspace]
+members = ["packages/*"]
+
+[tool.uv.sources]
+alisa-config = { workspace = true }
+alisa-env = { workspace = true }
+alisa-data = { workspace = true }
+alisa-storage = { workspace = true }
+alisa-log = { workspace = true }
+alisa-time = { workspace = true }
+
+[build-system]
+requires = ["uv_build>=0.10.9,<0.11.0"]
+build-backend = "uv_build"
+
+[project.scripts]
+alisa-test = "alisa_sdk:main"
